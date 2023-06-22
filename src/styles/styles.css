@@ -1,5 +1,6 @@
 @import './robota.css';
-@import '~normalize.css';
+@import '~normalize.css'; 
+/* take normalize.css from node_modules */
 
 body{
     font-family: "Robota";

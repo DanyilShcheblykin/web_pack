@@ -4,18 +4,25 @@
   "description": "",
   "private": true,
   "scripts": {
-    "build": "webpack --mode production",
-    "dev": "webpack --mode development",
-    "watch": "webpack --mode development --watch"
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "dev": "cross-env NODE_ENV=development webpack --mode development",
+    "watch": "cross-env NODE_ENV=development webpack --mode development --watch",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.22.1",
+    "babel-loader": "^9.1.2",
     "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.4",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.1",
     "mini-css-extract-plugin": "^2.7.6",
+    "postcss": "^8.4.23",
+    "postcss-discard-empty": "^6.0.0",
+    "postcss-loader": "^7.3.0",
     "style-loader": "^3.3.3",
     "url-loader": "^4.1.1",
     "webpack": "^5.83.1",
@@ -23,7 +30,13 @@
     "webpack-dev-server": "^4.15.0"
   },
   "dependencies": {
+    "@babel/preset-env": "^7.22.4",
+    "@babel/preset-typescript": "^7.21.5",
+    "cross-env": "^7.0.3",
     "jquery": "^3.7.0",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "sass": "^1.62.1",
+    "sass-loader": "^13.3.0",
+    "terser-webpack-plugin": "^5.3.9"
   }
 }
